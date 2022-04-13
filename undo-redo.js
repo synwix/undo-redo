@@ -69,13 +69,14 @@ export function undoRedo(stackSize,workObj){
 		while(target.length > 0) {  //empty the array
     		target.pop();
 		}
-	  }
+	  
 	  for (const prop in source) {  //do a deep copy of the object recursively
 	    if (typeof source[prop] === 'object') {
 	      target[prop] = extend(target[prop], source[prop]);
 	    } else {
 	      target[prop] = source[prop];
 	    }
+	  }
 	  }
 	  return target;
 	}	
